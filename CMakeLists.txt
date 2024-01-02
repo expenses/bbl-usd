@@ -22,6 +22,8 @@ set(bindfiles
     bind/vt.cpp 
 )
 
+set(python_lib_path "/usr/include/python3.11")
+
 # Configures bbl-translate to generate the shim library source and build it as
 # libopenusd-c
 bbl_translate_binding(
@@ -35,10 +37,12 @@ bbl_translate_binding(
         -D_MT 
         -DBOOST_ALL_NO_LIB 
         -D__TBB_show_deprecation_message_task_H 
+        -I ${python_lib_path}
 )
 
-target_link_libraries(openusd-c PUBLIC usd usdGeom sdf sdr ndr pcp)
-
+set(usdlibs usd_ms)
+target_link_libraries(openusd-c PUBLIC ${usdlibs})
+target_include_directories(openusd-c PRIVATE ${python_lib_path})
 
 target_compile_definitions(openusd-c PRIVATE NOMINMAX BOOST_ALL_NO_LIB __TBB_show_deprecation_message_task_H)
 
