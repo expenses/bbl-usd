@@ -9,7 +9,7 @@ include(GNUInstallDirs)
 bbl_generate_binding(
     openusd
     gen.cpp
-    pxrInternal_v0_23__pxrReserved__
+    pxrInternal_v0_24__pxrReserved__
 
     COMPILE_ARGS
         -DNOMINMAX

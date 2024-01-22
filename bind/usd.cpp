@@ -295,10 +295,10 @@ BBL_MODULE(usd) {
         .ctor(bbl::Class<PXR_NS::UsdCollectionMembershipQuery>::Ctor<>(), "default")
         /// XXX: this one fails to link
         // .ctor(bbl::Class<PXR_NS::UsdCollectionMembershipQuery>::Ctor<const PXR_NS::UsdCollectionMembershipQuery::PathExpansionRuleMap &, const PXR_NS::SdfPathSet &>("pathExpansionRuleMap", "includedCollections"), "ctor_01")
-        .m((bool (PXR_NS::UsdCollectionMembershipQuery::*)(const PXR_NS::SdfPath &, PXR_NS::TfToken *) const)
-            &PXR_NS::UsdCollectionMembershipQuery::IsPathIncluded, "IsPathIncluded_00")
-        .m((bool (PXR_NS::UsdCollectionMembershipQuery::*)(const PXR_NS::SdfPath &, const PXR_NS::TfToken &, PXR_NS::TfToken *) const)
-            &PXR_NS::UsdCollectionMembershipQuery::IsPathIncluded, "IsPathIncluded_01")
+        //.m((bool (PXR_NS::UsdCollectionMembershipQuery::*)(const PXR_NS::SdfPath &, PXR_NS::TfToken *) const)
+        //    &PXR_NS::UsdCollectionMembershipQuery::IsPathIncluded, "IsPathIncluded_00")
+        //.m((bool (PXR_NS::UsdCollectionMembershipQuery::*)(const PXR_NS::SdfPath &, const PXR_NS::TfToken &, PXR_NS::TfToken *) const)
+        //    &PXR_NS::UsdCollectionMembershipQuery::IsPathIncluded, "IsPathIncluded_01")
         .m(&PXR_NS::UsdCollectionMembershipQuery::HasExcludes)
         .m(&PXR_NS::UsdCollectionMembershipQuery::operator==, "op_eq")
         .m(&PXR_NS::UsdCollectionMembershipQuery::operator!=, "op_neq")
@@ -819,7 +819,7 @@ BBL_MODULE(usd) {
         .m(&PXR_NS::UsdPrim::GetAuthoredAttributes)
         .m(&PXR_NS::UsdPrim::GetAttribute)
         .m(&PXR_NS::UsdPrim::HasAttribute)
-        .m(&PXR_NS::UsdPrim::FindAllAttributeConnectionPaths)
+        //.m(&PXR_NS::UsdPrim::FindAllAttributeConnectionPaths)
 
         // Relationships
         .m((PXR_NS::UsdRelationship(PXR_NS::UsdPrim::*)(PXR_NS::TfToken const&, bool) const)
@@ -829,7 +829,7 @@ BBL_MODULE(usd) {
         .m(&PXR_NS::UsdPrim::GetAuthoredRelationships)
         .m(&PXR_NS::UsdPrim::GetRelationship)
         .m(&PXR_NS::UsdPrim::HasRelationship)
-        .m(&PXR_NS::UsdPrim::FindAllRelationshipTargetPaths)
+        //.m(&PXR_NS::UsdPrim::FindAllRelationshipTargetPaths)
 
         // Payloads, load and unload
         .m(&PXR_NS::UsdPrim::GetPayloads)
@@ -1331,7 +1331,7 @@ BBL_MODULE(usd) {
         .m(&PXR_NS::UsdStage::SetLoadRules)
         .m(&PXR_NS::UsdStage::GetPopulationMask)
         .m(&PXR_NS::UsdStage::SetPopulationMask)
-        .m(&PXR_NS::UsdStage::ExpandPopulationMask)
+        //.m(&PXR_NS::UsdStage::ExpandPopulationMask)
 
         // Layers and Edit Targets
         .m(&PXR_NS::UsdStage::GetSessionLayer)
