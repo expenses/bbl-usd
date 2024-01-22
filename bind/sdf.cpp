@@ -354,9 +354,9 @@ BBL_MODULE(sdf) {
 
     bbl::Class<PXR_NS::SdfAssetPath>("AssetPath")
         .ctor(bbl::Class<PXR_NS::SdfAssetPath>::Ctor<>(), "new")
-        .m(&pxrInternal_v0_23__pxrReserved__::SdfAssetPath::operator==, "op_eq")
-        .m(&pxrInternal_v0_23__pxrReserved__::SdfAssetPath::operator!=, "op_neq")
-        .m(&pxrInternal_v0_23__pxrReserved__::SdfAssetPath::operator<, "op_lt")
+        .m(&pxrInternal_v0_24__pxrReserved__::SdfAssetPath::operator==, "op_eq")
+        .m(&pxrInternal_v0_24__pxrReserved__::SdfAssetPath::operator!=, "op_neq")
+        .m(&pxrInternal_v0_24__pxrReserved__::SdfAssetPath::operator<, "op_lt")
     ;
 
     // we bind specific wrapper functions for these as there's no point
