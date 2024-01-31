@@ -1781,6 +1781,10 @@ int ar_WritableAssetSharedPtr_Write(ar_WritableAssetSharedPtr_t* _this, void con
 
 int ar_WritableAssetSharedPtr_dtor(ar_WritableAssetSharedPtr_t* _this);
 
+int ar_set_ar_resolver_factory(tf_Type_t const* type, void* create_identifier_for_new_asset, void* create_identifier, void* open_asset, void* resolve, void* resolve_for_new_asset, void* open_asset_for_write, void* get_extension, void* get_modification_timestamp, void* close_writeable_asset, void* open_writable_asset, void* write_writable_asset);
+
+int ar_asset_from_bytes(char const* bytes, size_t len, ar_AssetSharedPtr_t** _result);
+
 int gf_Vec2fArray_data(gf_Vec2fArray_t* _this, gf_Vec2f_t** _result);
 
 int gf_Vec2fArray_data_const(gf_Vec2fArray_t const* _this, gf_Vec2f_t const** _result);
