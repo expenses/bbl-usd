@@ -32,7 +32,7 @@ set(bindfiles
 
 # Configures bbl-translate to generate the shim library source and build it as
 # libopenusd-c
-if (GENERATE_BINDINGS)
+if (${GENERATE_BINDINGS})
   bbl_translate_binding(
       openusd
       BINDFILES
@@ -45,10 +45,10 @@ if (GENERATE_BINDINGS)
           -DBOOST_ALL_NO_LIB
           -D__TBB_show_deprecation_message_task_H
   )
+else()
+  add_library(openusd-c STATIC bindings/openusd-c.cpp)
+  target_include_directories(openusd-c PUBLIC ${CMAKE_CURRENT_SOURCE_DIR} bindings)
 endif()
-
-add_library(openusd-c STATIC bindings/openusd-c.cpp)
-target_include_directories(openusd-c PUBLIC ${CMAKE_CURRENT_SOURCE_DIR} bindings)
 
 target_link_libraries(
   openusd-c

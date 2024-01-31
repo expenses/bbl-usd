@@ -21457,6 +21457,18 @@ int usdImaging_GLEngine_Render(usdImaging_GLEngine_t* _this, usd_Prim_t const* r
 
 int usdImaging_GLEngine_SetRendererSetting(usdImaging_GLEngine_t* _this, tf_Token_t const* id, vt_Value_t const* value);
 
+int usdImaging_GLEngine_SetRendererAov(usdImaging_GLEngine_t* _this, tf_Token_t const* id, bool* _result);
+
+int usdImaging_GLEngine_GetGPUEnabled(usdImaging_GLEngine_t const* _this, bool* _result);
+
+int usdImaging_GLEngine_GetCurrentRendererId(usdImaging_GLEngine_t const* _this, tf_Token_t** _result);
+
+int usdImaging_GLEngine_SetRendererPlugin(usdImaging_GLEngine_t* _this, tf_Token_t const* id, bool* _result);
+
+int usdImaging_GLEngine_GetRendererPlugins(tf_TokenVector_t** _result);
+
+int usdImaging_GLEngine_GetRendererDisplayName(tf_Token_t const* id, std_String_t** _result);
+
 int usdImaging_GLEngine_new(usdImaging_GLEngine_t** _result);
 
 int usdImaging_GLEngine_dtor(usdImaging_GLEngine_t* _this);
