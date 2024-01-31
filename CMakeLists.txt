@@ -68,11 +68,11 @@ set_property(TARGET usd-c-test01 PROPERTY C_STANDARD 99)
 endif()
 
 # This is just here to trigger generation of compile commands for the bind file so we get LSP functionality in the bind file
-add_library(bind-dummy ${bindfiles})
+#add_library(bind-dummy ${bindfiles})
 #target_link_libraries(bind-dummy babble::bind)
-target_include_directories(bind-dummy PRIVATE $<TARGET_PROPERTY:openusd-c,INCLUDE_DIRECTORIES>)
-target_compile_options(bind-dummy PRIVATE $<TARGET_PROPERTY:openusd-c,COMPILE_OPTIONS>)
-target_compile_definitions(bind-dummy PRIVATE $<TARGET_PROPERTY:openusd-c,COMPILE_DEFINITIONS>)
+#target_include_directories(bind-dummy PRIVATE $<TARGET_PROPERTY:openusd-c,INCLUDE_DIRECTORIES>)
+#target_compile_options(bind-dummy PRIVATE $<TARGET_PROPERTY:openusd-c,COMPILE_OPTIONS>)
+#target_compile_definitions(bind-dummy PRIVATE $<TARGET_PROPERTY:openusd-c,COMPILE_DEFINITIONS>)
 
 install(
   TARGETS
