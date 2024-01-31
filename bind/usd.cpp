@@ -91,7 +91,7 @@ PXR_NS::UsdStageRefPtr Stage_Open(char const* filename, PXR_NS::UsdStage::Initia
 bool StageRefPtr_ExportToString(
     const PXR_NS::UsdStageRefPtr& stage,
     std::string** output,
-    bool addSourceFileComment = true
+    bool addSourceFileComment
 ) {
     return stage->ExportToString(*output, addSourceFileComment);
 }
