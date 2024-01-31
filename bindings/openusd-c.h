@@ -21473,6 +21473,8 @@ int usdImaging_GLEngine_GetRendererPlugins(tf_TokenVector_t** _result);
 
 int usdImaging_GLEngine_GetRendererDisplayName(tf_Token_t const* id, std_String_t** _result);
 
+int usdImaging_GLEngine_SetColorCorrectionSettings(usdImaging_GLEngine_t* _this, tf_Token_t const* ccType, tf_Token_t const* ocioDisplay, tf_Token_t const* ocioView, tf_Token_t const* ocioColorSpace, tf_Token_t const* ocioLook);
+
 int usdImaging_GLEngine_new(usdImaging_GLEngine_t** _result);
 
 int usdImaging_GLEngine_dtor(usdImaging_GLEngine_t* _this);

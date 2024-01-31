@@ -28,6 +28,7 @@ BBL_MODULE(usdImaging) {
         .m(&PXR_NS::UsdImagingGLEngine::SetRendererPlugin)
         .m(&PXR_NS::UsdImagingGLEngine::GetRendererPlugins)
         .m(&PXR_NS::UsdImagingGLEngine::GetRendererDisplayName)
+        .m(&PXR_NS::UsdImagingGLEngine::SetColorCorrectionSettings)
         .m(&PXR_NS::UsdImagingGLEngine::TestIntersection)
     ;
 

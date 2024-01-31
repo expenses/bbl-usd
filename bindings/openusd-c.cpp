@@ -94858,6 +94858,16 @@ int usdImaging_GLEngine_GetRendererDisplayName(tf_Token_t const* id, std_String_
     }
 }
 
+int usdImaging_GLEngine_SetColorCorrectionSettings(usdImaging_GLEngine_t* _this, tf_Token_t const* ccType, tf_Token_t const* ocioDisplay, tf_Token_t const* ocioView, tf_Token_t const* ocioColorSpace, tf_Token_t const* ocioLook) {
+    try {
+        _this->SetColorCorrectionSettings(*ccType, *ocioDisplay, *ocioView, *ocioColorSpace, *ocioLook);
+        return 0;
+    } catch (std::exception& e) {
+        _bbl_error_message = e.what();
+        return 1;
+    }
+}
+
 int usdImaging_GLEngine_new(usdImaging_GLEngine_t** _result) {
     try {
         *_result = new pxr::UsdImagingGLEngine();
