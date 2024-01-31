@@ -15213,26 +15213,6 @@ int js_Value_from_int(int param00, js_Value_t** _result) {
     }
 }
 
-int js_Value_from_int64_t(long param00, js_Value_t** _result) {
-    try {
-        *_result = new pxr::JsValue(param00);
-        return 0;
-    } catch (std::exception& e) {
-        _bbl_error_message = e.what();
-        return 1;
-    }
-}
-
-int js_Value_from_uint64_t(unsigned long param00, js_Value_t** _result) {
-    try {
-        *_result = new pxr::JsValue(param00);
-        return 0;
-    } catch (std::exception& e) {
-        _bbl_error_message = e.what();
-        return 1;
-    }
-}
-
 int js_Value_from_double(double param00, js_Value_t** _result) {
     try {
         *_result = new pxr::JsValue(param00);
@@ -94778,29 +94758,9 @@ int vt_Value_IsHolding_uint64(vt_Value_t const* _this, bool* _result) {
     }
 }
 
-int vt_Value_Get_uint64(vt_Value_t const* _this, unsigned long const** _result) {
-    try {
-        *_result = &_this->Get<uint64_t>();
-        return 0;
-    } catch (std::exception& e) {
-        _bbl_error_message = e.what();
-        return 1;
-    }
-}
-
 int vt_Value_IsHolding_int64(vt_Value_t const* _this, bool* _result) {
     try {
         *_result = _this->IsHolding<int64_t>();
-        return 0;
-    } catch (std::exception& e) {
-        _bbl_error_message = e.what();
-        return 1;
-    }
-}
-
-int vt_Value_Get_int64(vt_Value_t const* _this, long const** _result) {
-    try {
-        *_result = &_this->Get<int64_t>();
         return 0;
     } catch (std::exception& e) {
         _bbl_error_message = e.what();
@@ -96898,49 +96858,9 @@ int vt_UIntArray_dtor(vt_UIntArray_t* _this) {
     return 0;
 }
 
-int vt_Int64Array_data(vt_Int64Array_t* _this, long** _result) {
-    try {
-        *_result = _this->data();
-        return 0;
-    } catch (std::exception& e) {
-        _bbl_error_message = e.what();
-        return 1;
-    }
-}
-
-int vt_Int64Array_data_const(vt_Int64Array_t const* _this, long const** _result) {
-    try {
-        *_result = _this->data();
-        return 0;
-    } catch (std::exception& e) {
-        _bbl_error_message = e.what();
-        return 1;
-    }
-}
-
 int vt_Int64Array_size(vt_Int64Array_t const* _this, size_t* _result) {
     try {
         *_result = _this->size();
-        return 0;
-    } catch (std::exception& e) {
-        _bbl_error_message = e.what();
-        return 1;
-    }
-}
-
-int vt_Int64Array_op_index(vt_Int64Array_t* _this, size_t index, long** _result) {
-    try {
-        *_result = &_this->operator[](index);
-        return 0;
-    } catch (std::exception& e) {
-        _bbl_error_message = e.what();
-        return 1;
-    }
-}
-
-int vt_Int64Array_op_index_const(vt_Int64Array_t const* _this, size_t index, long const** _result) {
-    try {
-        *_result = &_this->operator[](index);
         return 0;
     } catch (std::exception& e) {
         _bbl_error_message = e.what();
@@ -96963,49 +96883,9 @@ int vt_Int64Array_dtor(vt_Int64Array_t* _this) {
     return 0;
 }
 
-int vt_UInt64Array_data(vt_UInt64Array_t* _this, unsigned long** _result) {
-    try {
-        *_result = _this->data();
-        return 0;
-    } catch (std::exception& e) {
-        _bbl_error_message = e.what();
-        return 1;
-    }
-}
-
-int vt_UInt64Array_data_const(vt_UInt64Array_t const* _this, unsigned long const** _result) {
-    try {
-        *_result = _this->data();
-        return 0;
-    } catch (std::exception& e) {
-        _bbl_error_message = e.what();
-        return 1;
-    }
-}
-
 int vt_UInt64Array_size(vt_UInt64Array_t const* _this, size_t* _result) {
     try {
         *_result = _this->size();
-        return 0;
-    } catch (std::exception& e) {
-        _bbl_error_message = e.what();
-        return 1;
-    }
-}
-
-int vt_UInt64Array_op_index(vt_UInt64Array_t* _this, size_t index, unsigned long** _result) {
-    try {
-        *_result = &_this->operator[](index);
-        return 0;
-    } catch (std::exception& e) {
-        _bbl_error_message = e.what();
-        return 1;
-    }
-}
-
-int vt_UInt64Array_op_index_const(vt_UInt64Array_t const* _this, size_t index, unsigned long const** _result) {
-    try {
-        *_result = &_this->operator[](index);
         return 0;
     } catch (std::exception& e) {
         _bbl_error_message = e.what();
