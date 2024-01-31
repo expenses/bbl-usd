@@ -1,7 +1,11 @@
 cmake_minimum_required(VERSION 3.15)
 project(bbl-usd VERSION 0.1 LANGUAGES C CXX)
 
-#find_package(babble 0.6 CONFIG REQUIRED)
+option(GENERATE_BINDINGS "Generate bindings" ON)
+
+if (${GENERATE_BINDINGS})
+find_package(babble 0.6 CONFIG REQUIRED)
+endif()
 find_package(pxr REQUIRED)
 
 option(BUILD_EXAMPLE "Build the example program" OFF)
@@ -28,7 +32,7 @@ set(bindfiles
 
 # Configures bbl-translate to generate the shim library source and build it as
 # libopenusd-c
-if (false)
+if (GENERATE_BINDINGS)
   bbl_translate_binding(
       openusd
       BINDFILES
@@ -67,12 +71,14 @@ target_include_directories(usd-c-test01 PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
 set_property(TARGET usd-c-test01 PROPERTY C_STANDARD 99)
 endif()
 
-# This is just here to trigger generation of compile commands for the bind file so we get LSP functionality in the bind file
-#add_library(bind-dummy ${bindfiles})
-#target_link_libraries(bind-dummy babble::bind)
-#target_include_directories(bind-dummy PRIVATE $<TARGET_PROPERTY:openusd-c,INCLUDE_DIRECTORIES>)
-#target_compile_options(bind-dummy PRIVATE $<TARGET_PROPERTY:openusd-c,COMPILE_OPTIONS>)
-#target_compile_definitions(bind-dummy PRIVATE $<TARGET_PROPERTY:openusd-c,COMPILE_DEFINITIONS>)
+if (${GENERATE_BINDINGS})
+  # This is just here to trigger generation of compile commands for the bind file so we get LSP functionality in the bind file
+  add_library(bind-dummy ${bindfiles})
+  target_link_libraries(bind-dummy babble::bind)
+  target_include_directories(bind-dummy PRIVATE $<TARGET_PROPERTY:openusd-c,INCLUDE_DIRECTORIES>)
+  target_compile_options(bind-dummy PRIVATE $<TARGET_PROPERTY:openusd-c,COMPILE_OPTIONS>)
+  target_compile_definitions(bind-dummy PRIVATE $<TARGET_PROPERTY:openusd-c,COMPILE_DEFINITIONS>)
+endif()
 
 install(
   TARGETS
