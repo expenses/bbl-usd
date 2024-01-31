@@ -94588,6 +94588,66 @@ int usdImaging_GLEngine_SetRendererSetting(usdImaging_GLEngine_t* _this, tf_Toke
     }
 }
 
+int usdImaging_GLEngine_SetRendererAov(usdImaging_GLEngine_t* _this, tf_Token_t const* id, bool* _result) {
+    try {
+        *_result = _this->SetRendererAov(*id);
+        return 0;
+    } catch (std::exception& e) {
+        _bbl_error_message = e.what();
+        return 1;
+    }
+}
+
+int usdImaging_GLEngine_GetGPUEnabled(usdImaging_GLEngine_t const* _this, bool* _result) {
+    try {
+        *_result = _this->GetGPUEnabled();
+        return 0;
+    } catch (std::exception& e) {
+        _bbl_error_message = e.what();
+        return 1;
+    }
+}
+
+int usdImaging_GLEngine_GetCurrentRendererId(usdImaging_GLEngine_t const* _this, tf_Token_t** _result) {
+    try {
+        *_result = new pxr::TfToken(_this->GetCurrentRendererId());
+        return 0;
+    } catch (std::exception& e) {
+        _bbl_error_message = e.what();
+        return 1;
+    }
+}
+
+int usdImaging_GLEngine_SetRendererPlugin(usdImaging_GLEngine_t* _this, tf_Token_t const* id, bool* _result) {
+    try {
+        *_result = _this->SetRendererPlugin(*id);
+        return 0;
+    } catch (std::exception& e) {
+        _bbl_error_message = e.what();
+        return 1;
+    }
+}
+
+int usdImaging_GLEngine_GetRendererPlugins(tf_TokenVector_t** _result) {
+    try {
+        *_result = new pxr::TfTokenVector(pxr::UsdImagingGLEngine::GetRendererPlugins());
+        return 0;
+    } catch (std::exception& e) {
+        _bbl_error_message = e.what();
+        return 1;
+    }
+}
+
+int usdImaging_GLEngine_GetRendererDisplayName(tf_Token_t const* id, std_String_t** _result) {
+    try {
+        *_result = new std::string(pxr::UsdImagingGLEngine::GetRendererDisplayName(*id));
+        return 0;
+    } catch (std::exception& e) {
+        _bbl_error_message = e.what();
+        return 1;
+    }
+}
+
 int usdImaging_GLEngine_new(usdImaging_GLEngine_t** _result) {
     try {
         *_result = new pxr::UsdImagingGLEngine();
