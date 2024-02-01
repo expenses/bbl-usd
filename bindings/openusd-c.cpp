@@ -696,6 +696,9 @@ void GLRenderParams_SetEnableLighting(PXR_NS::UsdImagingGLRenderParams& params, 
 void GLRenderParams_SetCullStyle(PXR_NS::UsdImagingGLRenderParams& params, PXR_NS::UsdImagingGLCullStyle cullStyle) {
         params.cullStyle = cullStyle;
     }
+void GLRenderParams_SetColorCorrectionMode(PXR_NS::UsdImagingGLRenderParams& params, PXR_NS::TfToken colorCorrectionMode) {
+        params.colorCorrectionMode = colorCorrectionMode;
+    }
 }
 
 using ar_ResolvedWriteMode = int;
@@ -94931,6 +94934,16 @@ int usdImaging_GLRenderParams_SetEnableLighting(usdImaging_GLRenderParams_t* par
 int usdImaging_GLRenderParams_SetCullStyle(usdImaging_GLRenderParams_t* params, int cullStyle) {
     try {
         bblext::GLRenderParams_SetCullStyle(*params, static_cast<pxr::UsdImagingGLCullStyle>(cullStyle));
+        return 0;
+    } catch (std::exception& e) {
+        _bbl_error_message = e.what();
+        return 1;
+    }
+}
+
+int usdImaging_GLRenderParams_SetColorCorrectionMode(usdImaging_GLRenderParams_t* params, tf_Token_t* colorCorrectionMode) {
+    try {
+        bblext::GLRenderParams_SetColorCorrectionMode(*params, *colorCorrectionMode);
         return 0;
     } catch (std::exception& e) {
         _bbl_error_message = e.what();

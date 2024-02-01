@@ -21487,6 +21487,8 @@ int usdImaging_GLRenderParams_SetEnableLighting(usdImaging_GLRenderParams_t* par
 
 int usdImaging_GLRenderParams_SetCullStyle(usdImaging_GLRenderParams_t* params, int cullStyle);
 
+int usdImaging_GLRenderParams_SetColorCorrectionMode(usdImaging_GLRenderParams_t* params, tf_Token_t* colorCorrectionMode);
+
 int vt_Value_IsArrayValued(vt_Value_t const* _this, bool* _result);
 
 int vt_Value_IsEmpty(vt_Value_t const* _this, bool* _result);
