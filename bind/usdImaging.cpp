@@ -13,6 +13,10 @@ namespace bblext {
     void GLRenderParams_SetCullStyle(PXR_NS::UsdImagingGLRenderParams& params, PXR_NS::UsdImagingGLCullStyle cullStyle) {
         params.cullStyle = cullStyle;
     }
+
+    void GLRenderParams_SetColorCorrectionMode(PXR_NS::UsdImagingGLRenderParams& params, PXR_NS::TfToken colorCorrectionMode) {
+        params.colorCorrectionMode = colorCorrectionMode;
+    }
 }
 
 BBL_MODULE(usdImaging) {
@@ -39,6 +43,7 @@ BBL_MODULE(usdImaging) {
 
     bbl::fn(&bblext::GLRenderParams_SetEnableLighting);
     bbl::fn(&bblext::GLRenderParams_SetCullStyle);
+    bbl::fn(&bblext::GLRenderParams_SetColorCorrectionMode);
 }
 
 
