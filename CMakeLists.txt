@@ -4,7 +4,7 @@ project(bbl-usd VERSION 0.1 LANGUAGES C CXX)
 option(GENERATE_BINDINGS "Generate bindings" ON)
 
 if (${GENERATE_BINDINGS})
-find_package(babble 0.6 CONFIG REQUIRED)
+find_package(babble 0.7 CONFIG REQUIRED)
 endif()
 find_package(pxr REQUIRED)
 
