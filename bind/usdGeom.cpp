@@ -65,7 +65,6 @@ BBL_MODULE(usdGeom) {
     bbl::Class<PXR_NS::UsdGeomBBoxCache>("BBoxCache")
         .ctor(bbl::Class<PXR_NS::UsdGeomBBoxCache>::Ctor<PXR_NS::UsdTimeCode, PXR_NS::TfTokenVector, bool, bool>("time", "includedPurposes", "useExtentsHint", "ignoreVisibility"))
         .m(&PXR_NS::UsdGeomBBoxCache::ComputeWorldBound)
-        .m(&PXR_NS::UsdGeomBBoxCache::ComputeWorldBoundWithOverrides)
         .m(&PXR_NS::UsdGeomBBoxCache::ComputeRelativeBound)
         .m(&PXR_NS::UsdGeomBBoxCache::ComputeLocalBound)
         .m((PXR_NS::GfBBox3d (PXR_NS::UsdGeomBBoxCache::*)(PXR_NS::UsdPrim const&))
