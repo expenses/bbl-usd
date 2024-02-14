@@ -368,9 +368,12 @@ BBL_MODULE(sdf) {
 
     bbl::Class<PXR_NS::SdfAssetPath>("AssetPath")
         .ctor(bbl::Class<PXR_NS::SdfAssetPath>::Ctor<>(), "new")
+#if PXR_VERSION >= 2400
+#else
         .m(&pxrInternal_v0_23__pxrReserved__::SdfAssetPath::operator==, "op_eq")
         .m(&pxrInternal_v0_23__pxrReserved__::SdfAssetPath::operator!=, "op_neq")
         .m(&pxrInternal_v0_23__pxrReserved__::SdfAssetPath::operator<, "op_lt")
+#endif
     ;
 
     // we bind specific wrapper functions for these as there's no point

@@ -561,7 +561,9 @@ BBL_MODULE(usdGeom) {
         .m(&PXR_NS::UsdGeomSubset::GetGeomSubsets)
         .m(&PXR_NS::UsdGeomSubset::SetFamilyType)
         .m(&PXR_NS::UsdGeomSubset::GetFamilyType)
+#if PXR_VERSION < 2400
         .m(&PXR_NS::UsdGeomSubset::GetUnassignedIndices)
+#endif
         .m(&PXR_NS::UsdGeomSubset::ValidateSubsets)
         .m(&PXR_NS::UsdGeomSubset::ValidateFamily)
         ;
