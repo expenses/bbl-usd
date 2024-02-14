@@ -33,6 +33,7 @@ bbl_translate_binding(
     BINDFILES 
         ${bindfiles}
     COMPILE_ARGS 
+        "-I${VULKAN_SDK}/include"
         -Wno-deprecated-builtins 
         "-Wno-#pragma-messages"
         -DNOMINMAX 
@@ -49,6 +50,8 @@ target_link_libraries(
 
 
 target_compile_definitions(openusd-c PRIVATE NOMINMAX BOOST_ALL_NO_LIB __TBB_show_deprecation_message_task_H)
+
+target_include_directories(openusd-c PRIVATE ${VULKAN_SDK}/include)
 
 if (MSVC)
     target_compile_options(openusd-c PRIVATE /bigobj)
