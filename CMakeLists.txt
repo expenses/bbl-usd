@@ -52,6 +52,7 @@ target_link_libraries(
 target_compile_definitions(openusd-c PRIVATE NOMINMAX BOOST_ALL_NO_LIB __TBB_show_deprecation_message_task_H)
 
 target_include_directories(openusd-c PRIVATE ${VULKAN_SDK}/include)
+target_include_directories(openusd-c PRIVATE ${BBL_USD_STANDARD_INCLUDE_DIRECTORY})
 
 if (MSVC)
     target_compile_options(openusd-c PRIVATE /bigobj)
