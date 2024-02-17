@@ -53,6 +53,7 @@ target_compile_definitions(openusd-c PRIVATE NOMINMAX BOOST_ALL_NO_LIB __TBB_sho
 
 target_include_directories(openusd-c PRIVATE ${VULKAN_SDK}/include)
 target_include_directories(openusd-c PRIVATE ${BBL_USD_STANDARD_INCLUDE_DIRECTORY})
+target_include_directories(openusd-c PRIVATE ${BBL_USD_STANDARD_INCLUDE_DIRECTORY2})
 
 if (MSVC)
     target_compile_options(openusd-c PRIVATE /bigobj)
