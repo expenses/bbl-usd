@@ -85,4 +85,4 @@ install(
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 
-install(FILES openusd-c.h openusd-c.cpp DESTINATION src)
+install(FILES ${CMAKE_BINARY_DIR}/openusd-c.h ${CMAKE_BINARY_DIR}/openusd-c.cpp DESTINATION src)
