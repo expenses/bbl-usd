@@ -95,17 +95,17 @@ BBL_MODULE(vt) {
         .m((bool (Value::*)() const)
             &Value::IsHolding<uint64_t>, "IsHolding_uint64"
         )
-        .m((uint64_t const& (Value::*)() const&)
-            &Value::Get<uint64_t>, "Get_uint64"
-        ) 
+        //.m((uint64_t const& (Value::*)() const&)
+        //    &Value::Get<uint64_t>, "Get_uint64"
+        //) 
 
         .ctor(bbl::Class<Value>::Ctor<int64_t>("value"), "from_int64")
         .m((bool (Value::*)() const)
             &Value::IsHolding<int64_t>, "IsHolding_int64"
         )
-        .m((int64_t const& (Value::*)() const&)
-            &Value::Get<int64_t>, "Get_int64"
-        ) 
+        //.m((int64_t const& (Value::*)() const&)
+        //    &Value::Get<int64_t>, "Get_int64"
+        //) 
 
         .ctor(bbl::Class<Value>::Ctor<float>("value"), "from_float")
         .m((bool (Value::*)() const)
