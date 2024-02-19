@@ -23,7 +23,7 @@ BBL_MODULE(js) {
         .ctor(bbl::Class<PXR_NS::JsValue>::Ctor<char const*>(), "from_string")
         .ctor(bbl::Class<PXR_NS::JsValue>::Ctor<bool>(), "from_bool")
         .ctor(bbl::Class<PXR_NS::JsValue>::Ctor<int>(), "from_int")
-        .ctor(bbl::Class<PXR_NS::JsValue>::Ctor<int64_t>(), "from_int64_t")
+        //.ctor(bbl::Class<PXR_NS::JsValue>::Ctor<int64_t>(), "from_int64_t")
         .ctor(bbl::Class<PXR_NS::JsValue>::Ctor<uint64_t>(), "from_uint64_t")
         .ctor(bbl::Class<PXR_NS::JsValue>::Ctor<double>(), "from_double")
         .m(&PXR_NS::JsValue::GetJsObject)

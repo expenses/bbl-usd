@@ -553,13 +553,13 @@ BBL_MODULE(vt) {
         VTARRAY_METHODS(uint32_t)
     ;
 
-    bbl::Class<PXR_NS::VtInt64Array>("Int64Array")
-        VTARRAY_METHODS(int64_t)
-    ;
-
-    bbl::Class<PXR_NS::VtUInt64Array>("UInt64Array")
-        VTARRAY_METHODS(uint64_t)
-    ;
+    //bbl::Class<PXR_NS::VtInt64Array>("Int64Array")
+    //    VTARRAY_METHODS(int64_t)
+    //;
+//
+    //bbl::Class<PXR_NS::VtUInt64Array>("UInt64Array")
+    //    VTARRAY_METHODS(uint64_t)
+    //;
 
     bbl::Class<PXR_NS::VtFloatArray>("FloatArray")
         VTARRAY_METHODS(float)
