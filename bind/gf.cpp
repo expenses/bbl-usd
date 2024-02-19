@@ -1950,7 +1950,7 @@ BBL_MODULE(gf) {
     bbl::Class<PXR_NS::GfSize3>("Size3")
         .ctor(bbl::Class<PXR_NS::GfSize3>::Ctor<>(), "default")
         .ctor(bbl::Class<PXR_NS::GfSize3>::Ctor<const PXR_NS::GfVec3i &>("o"), "ctor_01")
-        .ctor(bbl::Class<PXR_NS::GfSize3>::Ctor<const size_t *>("v"), "ctor_02")
+        //.ctor(bbl::Class<PXR_NS::GfSize3>::Ctor<const size_t *>("v"), "ctor_02")
         .ctor(bbl::Class<PXR_NS::GfSize3>::Ctor<size_t, size_t, size_t>("v0", "v1", "v2"), "ctor_03")
         .m((PXR_NS::GfSize3 & (PXR_NS::GfSize3::*)(const size_t *))
             &PXR_NS::GfSize3::Set, "Set_00")
